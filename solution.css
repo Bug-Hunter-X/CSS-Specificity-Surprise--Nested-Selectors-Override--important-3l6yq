@@ -1,0 +1,26 @@
+There are several ways to solve this issue.  The best solution depends on the context and overall CSS structure.
+
+**1. Adjust Specificity:**
+
+Instead of relying on `!important`, modify the specificity of the selector to ensure it takes precedence.  In this case, you could make the '.child' selector more specific, for example by adding an extra class to the parent element:
+
+```css
+.parent-container {
+
+}
+
+.parent-container .child {
+  color: red;
+}
+
+.parent-container .parent .child {
+  color: green;
+}
+
+```
+
+**2. Avoid !important:**
+
+Generally, it's considered best practice to avoid `!important` declarations as much as possible.  They can lead to difficult-to-maintain and hard-to-debug CSS.  Refactor the styles to avoid the need for `!important`.
+
+This might involve restructuring your CSS or using a more organized approach to handle styling conflicts.
